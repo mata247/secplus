@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Email Verification</title>
+</head>
+<body>
+  <div>
+    <h1>Bienvenue sur le site officiel de la Maison Tumaini</h1>
+    <p>Votre e-mail a été vérifié avec succès et votre compte est prêt. Veuillez conserver votre mot de passe en toute sécurité pour éviter toute utilisation abusive.</p>
+    <p>Bienvenue sur le site officiel de maison tumaini</p>
+    <p>Vous pouvez raccourcir l'écran ou imprimer votre carte de membre numérique ci-dessous</p>
+    <ul>
+      <p><strong>Nom:</strong> <%= user.name %></p>
+      <p><strong>Email:</strong> <%= user.email %></p>
+      <p><strong>Province:</strong> <%= user.cityOrTownOrVillage %></p>
+      <p><strong>Pays:</strong> <%= user.country %></p>
+
+      
+    </ul>
+    <p>Vous pouvez maintenant accéder à votre compte et commencer à utiliser nos services.</p>
+    <p>Si vous avez des questions ou avez besoin d'aide, n'hésitez pas à nous contacter.</p>
+    <a class="btn bg-dark text-warning"  href="/">   Commencez par visiter le site pour en savoir plus ici !!</a>
+  </div>
+</body>
+</html>

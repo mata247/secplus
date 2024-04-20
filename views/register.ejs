@@ -1,0 +1,85 @@
+<div class="row flex-lg-row-reverse align-items-center clearfix g-5  px-4 mb-4 form-cover">
+  <p style="text-align: left; padding: 15px; font-size: 1.2rem;">Veuillez remplir vos coordonnées correctement en utilisant le formulaire ci-dessous pour vous inscrire.</p>
+  <hr />
+  <div class="col-12 col-lg-6">
+      <img src="/img/splogov.png" width="75%" class="d-block mx-lg-auto img-fluid" loading="lazy" alt="Maison Tumaini">
+  </div>
+
+  <div class="col-12 col-lg-6 login-form">
+      <form method="post" action="/api/users/register">
+          <label for="name">Non et Pre-nom:</label>
+          <input type="text" name="name" value="<%= name %>" placeholder="Écrivez votre nom et prénom">
+          <% if (validationErrors.includes("Le nom est exigé")) { %>
+            <p class="error">Le nom est exigé</p>
+          <% } %>
+          <br>
+          <label for="email">Email:</label>
+          <input type="text" name="email" value="<%= email %>" placeholder="Écrivez votre email">
+          <% if (validationErrors.includes("L'e-mail doit être fourni!")) { %>
+            <p class="error">L'e-mail doit être fourni!</p>
+          <% } %>
+          <% if (validationErrors.includes("Cet e-mail existe déjà !")) { %>
+            <p class="error">Cet e-mail existe déjà !</p>
+          <% } %>
+          <% if (validationErrors.includes("Cet e-mail est déjà enregistré!")) { %>
+            <p class="error">Cet e-mail est déjà enregistré!</p>
+          <% } %>
+          <br>
+          
+          <label for="password">Mot de passe:</label>
+          <input type="password" name="password" placeholder="Écrivez votre mot de passe">
+          <% if (validationErrors.includes("Le mot de passe doit être indiqué!")) { %>
+            <p class="error">Le mot de passe doit être indiqué!</p>
+          <% } %>
+          <% if (validationErrors.includes("Le mot de passe doit comporter au moins 5 caractères")) { %>
+            <p class="error">Le mot de passe doit comporter au moins 5 caractères</p>
+          <% } %>
+          <br>
+          
+          <label for="confirm_password">Confirmé Le mot de passe:</label>
+          <input type="password" name="confirm_password" placeholder="Confirmé votre mot de passe">
+          <% if (validationErrors.includes("Le mot de passe et le mot de passe confirmé ne correspondent pas!")) { %>
+            <p class="error">Le mot de passe et le mot de passe confirmé ne correspondent pas!</p>
+          <% } %>
+          <br>
+          
+          <label for="mobileNumber">Numéro de téléphone:</label>
+          <input type="text" name="mobileNumber" value="<%= mobileNumber %>" placeholder="Entrez votre numéro de téléphone">
+          <% if (validationErrors.includes("Numéro de téléphone est exigé")) { %>
+              <p class="error">Numéro de téléphone est exigé</p>
+            <% } %>
+          <br>
+          
+          <label for="country">Nom du Pays:</label>
+          <input type="text" name="country" value="<%= country %>" placeholder="Nom de votre pays">
+          <% if (validationErrors.includes("Nom du Pays est exigé")) { %>
+              <p class="error">Nom du Pays est exigé</p>
+            <% } %>
+          <br>
+          
+          <label for="cityOrTownOrVillage">Zone et Territoire:</label>
+          <input type="text" name="cityOrTownOrVillage" value="<%= cityOrTownOrVillage %>" placeholder="Écrivez votre Zone et Territoire">
+          <% if (validationErrors.includes("Zone et Territoire est exigé")) { %>
+              <p class="error">Zone et Territoire est exigé</p>
+            <% } %>
+          <br>
+          
+          <button type="submit">Register</button>
+          <div class="text-center" style="margin-top: 15px;">
+            <p style="color: blue;">
+              Si vous avez déjà un compte, connectez-vous <a href="/api/users/login"> ici!</a>.
+            </p>
+          </div>
+        </form>
+        <p class="nb">NB : Cet enregistrement servira à générer votre carte MT numérique, assurez-vous donc que vos données sont correctes et légales.</p> 
+        
+        <style>
+          .error  {
+            color: rgb(249, 5, 5);
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      padding-left: 20px;
+      
+          }
+        </style>
+  </div>
+</div>

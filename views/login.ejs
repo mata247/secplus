@@ -1,0 +1,32 @@
+
+<div class="row flex-lg-row-reverse align-items-center  clearfix g-5  px-4 mb-4 form-cover ">
+    
+    <div class="col-12 col-lg-6 loginimage">
+        
+      <img src="/img/splogov.png" width="75%"  class="d-block mx-lg-auto img-fluid loginimage shadow border-radius justify-content-center" style="margin-top: 15px; border-radius: 30px;" loading="lazy" alt="Maison Tumaini">
+      <!-- <p style="text-align: center; padding: 5px;" >C'est bon de vous revoir cher camarade !</p> -->
+    </div>
+    
+    <div class="col-12 col-lg-6">
+        <p style="text-align: left; padding: 5px;" >Entrez votre email et votre mot de passe correctement pour vous connecter.</p> 
+        <hr/>
+        <form  method="POST" action="/api/users/login">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <br>
+            <button class="spaceout" type="submit">Connectez-vous / Login</button>
+            <p style="color: blue;" class="spaceout">Si vous n'avez pas de compte cliquez ici <a href="/api/users/register">Ouvrir un compte</a></p>
+        </form>
+    </div>
+    
+
+    <!-- Display flash messages if any -->
+    <% if (message) { %>
+        <p><%= message %></p>
+    <% } %>
+
+  
+  </div>
